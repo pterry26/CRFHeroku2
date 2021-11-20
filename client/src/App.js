@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ActivityDisplay from './components/ActivityDisplay'
+import Header from './components/Header'
 import Choices from './components/Choices'
 import StoredActivities from './components/StoredActivities'
 import DeleteActivities from './components/DeleteActivities'
@@ -11,10 +11,9 @@ import Col from 'react-bootstrap/Col'
 
 function App() {
   const [activities, setActivities] = useState([])
-  const [newActivity, setNewActivity] = useState('')
 
   const handleNewActivity = () => {
-    setNewActivity('Do a thing')
+    console.log('button!');
   }
 
   useEffect(() => {
@@ -23,8 +22,6 @@ function App() {
       .then(data => {
         setActivities(data.activities)
       })
-
-    handleNewActivity()
   }, [])
 
   const handleAddActivity = newActivity => {
@@ -35,7 +32,6 @@ function App() {
       .then(() => {
         setActivities([...activities, {activity: newActivity}])
       })
-    handleNewActivity()
   }
 
   const handleDeleteActivities = () => {
@@ -49,14 +45,15 @@ function App() {
   return (
     <div className='container'>
       <Container>
+        <h1> AAAAAHHHH</h1>
         <Row id="first-row">
           <Col>
-            <ActivityDisplay name={newActivity}/>
+            <Header/>
           </Col>
         </Row>
         <Row id="second-row">
           <Col> 
-            <Choices handleNewActivity={handleNewActivity} handleAddActivity={handleAddActivity} name={newActivity}/>
+            <Choices handleNewActivity={handleNewActivity} handleAddActivity={handleAddActivity} name={'Hello'}/>
           </Col>
         </Row>
         <Row>
