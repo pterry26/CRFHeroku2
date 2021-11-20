@@ -11,11 +11,6 @@ const getAllActivities = () => {
   return request.then(response => response.data)
 }
 
-const getNewActivity = () => {
-  const request = axios.get(`${baseUrl}/new`)
-  return request.then(response => response.data)
-}
-
 const addActivity = activity => {
   const request = axios.post(baseUrl, activity)
   
@@ -30,4 +25,4 @@ const deleteAllActivities = () => {
   return request.then(response => response.data)
 }
 
-export default { getAllActivities, getNewActivity, addActivity, deleteAllActivities }
+export default { getAllActivities, addActivity, deleteAllActivities }

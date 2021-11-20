@@ -13,6 +13,10 @@ function App() {
   const [activities, setActivities] = useState([])
   const [newActivity, setNewActivity] = useState('')
 
+  const handleNewActivity = () => {
+    setNewActivity('Do a thing')
+  }
+
   useEffect(() => {
     activityService
       .getAllActivities()
@@ -20,20 +24,8 @@ function App() {
         setActivities(data.activities)
       })
 
-    activityService
-      .getNewActivity()
-      .then(data => {
-        setNewActivity(data.activity)
-      })
+    handleNewActivity()
   }, [])
-
-  const handleNewActivity = () => {
-    activityService
-      .getNewActivity()
-      .then(data => {
-        setNewActivity(data.activity)
-      })
-  }
 
   const handleAddActivity = newActivity => {
     activityService
@@ -43,11 +35,7 @@ function App() {
       .then(() => {
         setActivities([...activities, {activity: newActivity}])
       })
-    activityService
-      .getNewActivity()
-      .then(data => {
-        setNewActivity(data.activity)
-      })
+    handleNewActivity()
   }
 
   const handleDeleteActivities = () => {

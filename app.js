@@ -23,10 +23,6 @@ app.post('/api/activities', (req, res) => {
   services.addActivityToDB(req, res);
 });
 
-app.get('/api/activities/new', (req, res) => {
-  services.getSingleActivity(req, res);
-});
-
 app.get('/api/activities/delete', (req, res) => {
   services.deleteAllActivites(req, res);
 });

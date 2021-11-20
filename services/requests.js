@@ -1,4 +1,3 @@
-const fetch = require('node-fetch'); // import node-fetch (enables the fetch API to be used server-side)
 const { Pool } = require('pg'); // import node-postgres
 
 const pool = new Pool({ // create connection to database
@@ -27,13 +26,6 @@ const getAllActivities = (req, res) => {
     .catch(err => console.log(err));
 }
 
-const getSingleActivity = (req, res) => {
-  fetch('https://www.boredapi.com/api/activity') // fetch activity from bored API - https://www.boredapi.com/about
-    .then(data => data.json()) // return a promise containing the response
-    .then(json => res.json(json)) // extract the JSON body content from the response (specifically the activity value) and sends it to the client
-    .catch((err) => console.log(err)) // log errors to the console
-}
-
 const addActivityToDB = (req, res) => {
   const activity = [ req.body.activity ]
 
@@ -51,4 +43,4 @@ const deleteAllActivites = (req, res) => {
     .catch(err => console.log(err));  
 }
 
-module.exports = { getSingleActivity, addActivityToDB, getAllActivities, deleteAllActivites }
+module.exports = { addActivityToDB, getAllActivities, deleteAllActivites }
