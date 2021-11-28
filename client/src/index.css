@@ -7,9 +7,50 @@ body {
 
 .container {
   margin: 2rem auto;
-  max-width: 600px;
+  max-width: 1200px;
   background-color: #fbfbfb;
   border-radius: 20px;
+  padding-bottom: 10px;
+}
+
+.header {
+  text-align: center;
+}
+
+#race-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin: 20px 5%;
+}
+
+#race-table td, #race-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#race-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#race-table tr:hover {background-color: #ddd;}
+
+#race-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #03A96D;
+  color: white;
+}
+
+.bronze-level {
+  background-color: #cd7f32;
+}
+
+.silver-level {
+  background-color: silver;
+}
+
+.gold-level {
+  background-color: gold;
 }
 
 .suggestionSection {

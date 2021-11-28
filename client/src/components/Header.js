@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = ({}) => {
   return (
-    <h1 id="find-your-race">Find Your Race</h1>
+    <h1 class="header">Find Your Race</h1>
   )
 }
 
